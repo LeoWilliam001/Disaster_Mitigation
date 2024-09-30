@@ -27,7 +27,7 @@ const Login=()=>{
                     </div>
                     <button type='submit' className='text-black w-full md-4 text-[18px] mt-6 rounded-full bg-white text-emarald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300'>Login</button>
                     <div className='flex p-2'>
-                        <span>Create a new account ? <Link to='/register'className='text-blue-400'> Register</Link></span>
+                        <span>Create a new account ? <Link to='/register'className='text-blue-700 underline'> Register</Link></span>
                     </div>
                 </form>
             </div>
