@@ -8,8 +8,8 @@ dotenv.config()
 
 const app=express();
 // app.use(cors({ origin: 'http://localhost:5173' })); 
-app.use(express.json()) 
-app.use(cors());  // allows to accept JSON data in req.body
+app.use(express.json()) // allows to accept JSON data in req.body
+app.use(cors());  
 
 app.post("/api/register",async(req,res)=>{
     const info=req.body;
@@ -34,5 +34,3 @@ app.listen(5000,()=>{
     connectDB();
     console.log("Server started and MongoDB Connected");
 })
-
-// UTS9K0wY3betGUAi
