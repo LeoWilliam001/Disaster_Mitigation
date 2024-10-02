@@ -89,7 +89,7 @@ const Register = () => {
                         <label htmlFor='password2' className='absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-x-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Confirm Password</label>
                         <AiOutlineUnlock className='absolute top-4 right-4' />
                     </div>
-                    <button type='submit' className='text-black w-full md-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300'>Register</button>
+                    <button type='submit' className='w-full md-4 text-[18px] mt-6 rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300'>Register</button>
                     <div className='flex p-2'>
                         <span className='text-black'>Existing user? <Link to='/login' className='text-blue-500 underline'> Login</Link></span>
                     </div>
