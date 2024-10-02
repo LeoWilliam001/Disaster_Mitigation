@@ -9,13 +9,13 @@ const Register=()=>{
     const [newUser,setNewUser]=useState({
         username:"",
         email:"",
-        password:"",
-    });
+        password:""
+    })
 
     const {createUser}=useReg();
     const handleUser=async(e)=>{
         e.preventDefault();
-        const [success,message]=await createUser(newUser);
+        const {success,message}=await createUser(newUser);
         console.log("Success",success);
         console.log("Message",message);
     }
@@ -23,9 +23,9 @@ const Register=()=>{
         <div>
             <div className='bg-slate-800 border-slate-400 rounded-md p-8 shadow-lg backdrop-blur-sm backdrop-filter bg-opacity-25 relative'>
                 <h1 className='text-3xl text-center'>Sign Up</h1>
-                <form action=''>
+                <form onSubmit={handleUser}>
                     <div className='relative my-4'>
-                        <input id="username" type="username" onChange={(e)=>setNewUser({...newUser,username:e.target.value})}  className='peer block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600'/>
+                        <input id="username" type="text" onChange={(e)=>setNewUser({...newUser,username:e.target.value})}  className='peer block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600'/>
                         <label htmlFor="username" className='absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-x-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Username</label>
                         <BiUser className='absolute top-4 right-4'/>
                     </div>
@@ -44,7 +44,7 @@ const Register=()=>{
                         <label htmlFor='password2' className='absolute text-sm text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-x-0 peer-focus:scale-75 peer-focus:-translate-y-6'>Confirm Password</label>
                         <AiOutlineUnlock className='absolute top-4 right-4'/>
                     </div>
-                    <button type='submit' onClick={handleUser} className='text-black w-full md-4 text-[18px] mt-6 rounded-full bg-white text-emarald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300'>Register</button>
+                    <button type='submit' className='text-black w-full md-4 text-[18px] mt-6 rounded-full bg-white text-emarald-800 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300'>Register</button>
                     <div className='flex p-2'>
                         <span className='text-black'>Existing user ? <Link to='/login' className='text-blue-500 underline'> Login</Link></span>
                     </div>

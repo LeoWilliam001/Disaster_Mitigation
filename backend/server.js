@@ -2,15 +2,14 @@ import express from 'express'
 import dotenv from 'dotenv'
 import {connectDB} from './config/db.js'
 import User from './models/register.model.js';
-// import {cors} from 'cors';
-// const cors = require('cors');
-
+import cors from 'cors';
 
 dotenv.config()
 
 const app=express();
 // app.use(cors({ origin: 'http://localhost:5173' })); 
-app.use(express.json()) // allows to accept JSON data in req.body
+app.use(express.json()) 
+app.use(cors());  // allows to accept JSON data in req.body
 
 app.post("/api/register",async(req,res)=>{
     const info=req.body;
